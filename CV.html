@@ -1,1 +1,82 @@
-Bienvenue sur mon CV
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefolio</title>
+    <link href="cv.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Noah Gallou-Salaun</h1>
+            <p>Étudiant Webmaster (19 ans)</p>
+        </div>
+    </header>
+    <main>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Téléphone : 06 10 07 40 51</p>
+            <p>Email : <a href="mailto:noahgallou29@gmail.com">noahgallou29@gmail.com</a></p>
+            <p>Adresse : 21 rue de la duchesse Anne, Brest</p>
+            <p>LinkedIn : <a href="https://www.linkedin.com/in/">linkedin.com/in/</a></p>
+        </section>
+        <section id="presentation">
+            <h2>Présentation</h2>
+            <p>Actuellement en première année de Deust Webmaster en distanciel à la Faculté de Limoges, je suis passionné par le web et les technologies numériques. Mon objectif est de me spécialiser dans la création et la gestion de sites internet professionnels. Je consacre mon temps à développer mes compétences en HTML, CSS et gestion de contenu, tout en apprenant à maîtriser les outils modernes du web. Grâce à ma curiosité et ma détermination, je souhaite évoluer dans ce domaine pour contribuer à des projets innovants et pertinents.</p>
+        </section>
+        <section id="bitcoin-price">
+            <h2>Current Bitcoin Price</h2>
+            <button id="getPrice">Get Bitcoin Price</button>
+            <div id="price"></div>
+        </section>
+        <section id="formation">
+            <h2>Formation</h2>
+            <ul>
+                <li><strong>1ère année Deust Webmaster</strong> - Faculté de Limoges (2024-2025)</li>
+                <li><strong>Licence 1 Staps</strong> - Staps Brest (2023-2024)</li>
+                <li><strong>Baccalauréat Mention Assez Bien</strong> - Lycée Charles de Foucault, Brest (Spécialités Arts plastiques et SES)</li>
+            </ul>
+        </section>
+        <section id="competences">
+            <h2>Compétences</h2>
+            <ul>
+                <li>Création de site</li>
+                <li>Gestion des réseaux sociaux</li>
+                <li>HTML, CSS</li>
+            </ul>
+        </section>
+        <section id="interets">
+            <h2>Centres d’intérêts</h2>
+            <ul>
+                <li><strong>Sport :</strong> Volley, football, esprit d’équipe</li>
+                <li><strong>Informatique :</strong> Création de contenus, outils numériques, plateformes (YouTube, Twitch)</li>
+                <li><strong>Arts :</strong> Musiques indépendantes, photographies</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Noah Gallou-Salaun</p>
+    </footer>
+    <script>
+        document.getElementById("getPrice").addEventListener("click", function() {
+            const url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const priceUSD = data.bpi.USD.rate;
+                    const priceGBP = data.bpi.GBP.rate;
+                    const priceEUR = data.bpi.EUR.rate;
+
+                    document.getElementById("price").innerHTML = `
+                        <p><strong>USD:</strong> $${priceUSD}</p>
+                        <p><strong>GBP:</strong> £${priceGBP}</p>
+                        <p><strong>EUR:</strong> €${priceEUR}</p>
+                    `;
+                })
+                .catch(error => console.error("Error fetching the API:", error));
+        });
+    </script>
+</body>
+</html>
