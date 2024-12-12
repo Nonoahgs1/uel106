@@ -1,1 +1,62 @@
-Balise CSS
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background: #001f3f;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section#presentation {
+    background: #e8f1ff;
+    border-left: 5px solid #001f3f;
+}
+
+a {
+    color: #001f3f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #001f3f;
+    color: #fff;
+    margin-top: 20px;
+}
+
